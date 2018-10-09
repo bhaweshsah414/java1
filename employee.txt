@@ -1,0 +1,70 @@
+package com.capgemini.beans;
+
+public class Employee {
+	
+	private int employeeNumber;
+	private String name;
+	public int getEmployeeNumber()
+	{
+		return employeeNumber;
+	}
+public void setEmployeeNumber(int employeeNumber)
+{
+	this.employeeNumber=employeeNumber;
+	
+}
+public String getName()
+{
+	return name;
+}
+public void setName(String name)
+{
+this.name=name;
+}
+}
+
+
+
+
+
+
+
+
+
+
+package com.capgemini.services;
+
+import java.util.Scanner;
+
+import com.capgemini.beans.Employee;
+public class Test
+{
+public static void  main(String []args) 
+{
+	Scanner s =new Scanner(System.in);
+System.out.println("enter choice");
+int choice = s.nextInt();
+
+Employee[] emps = new Employee[choice];
+for(int k=0;k<choice;k++)
+{
+	emps[k]=new Employee();
+}
+for(int i=0; i<choice;i++)
+{
+	System.out.println("enter number and name ");
+	int number = s.nextInt();
+	emps[i].setEmployeeNumber(number);
+String name = s.next();
+emps[i].setName(name);
+}
+System.out.println("Entered Details are");
+for(int j=0; j<emps.length;j++)
+{
+	System.out.print(emps[j].getEmployeeNumber());
+
+	System.out.println(emps[j].getName());
+}
+System.out.println(" ");
+}
+}
